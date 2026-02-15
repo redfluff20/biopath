@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biopath</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <h1>Biopath</h1>
+    <div class="subtitle">A Biochemistry Chain Game</div>
+    <button id="start-btn">Begin</button>
+  </div>
+
+  <!-- Game Container -->
+  <div id="game-container">
+
+    <!-- Turn Timeline -->
+    <div id="turn-timeline">
+      <div id="timeline-track"></div>
+    </div>
+
+    <!-- High Score Display -->
+    <div id="high-score-hud">
+      Best: <span id="hud-highscore">0</span>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="energy-tally">
+        <div class="tally-item tally-nadh">
+          <span class="tally-dot"></span>
+          NADH: <span id="tally-nadh">0</span>
+        </div>
+        <div class="tally-item tally-fadh2">
+          <span class="tally-dot"></span>
+          FADH₂: <span id="tally-fadh2">0</span>
+        </div>
+        <div class="tally-item tally-gtp">
+          <span class="tally-dot"></span>
+          GTP: <span id="tally-gtp">0</span>
+        </div>
+      </div>
+
+      <div id="score-panel">
+        <div class="score-label">Score</div>
+        <div class="score-value" id="score-display">0</div>
+        <div class="stat-row">
+          <span>Combo</span>
+          <span class="stat-val" id="combo-display">0</span>
+        </div>
+        <div class="stat-row">
+          <span>Multiplier</span>
+          <span class="multiplier-val" id="multiplier-display">1.0×</span>
+        </div>
+        <div class="stat-row">
+          <span>Rotation</span>
+          <span class="stat-val" id="rotation-display">0</span>
+        </div>
+        <div class="stat-row">
+          <span>Turn</span>
+          <span class="stat-val" id="turn-display">0 / 80</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cycle Ring -->
+    <div id="cycle-ring">
+      <svg id="ring-svg"></svg>
+      <!-- Nodes will be created by JS -->
+    </div>
+
+    <!-- Hand -->
+    <div id="hand-area">
+      <!-- Cards will be created by JS -->
+    </div>
+
+    <!-- Draft Draw Overlay -->
+    <div id="draft-overlay">
+      <div class="draft-prompt">Pick a card</div>
+      <div id="draft-choices"></div>
+    </div>
+
+    <!-- Discard button -->
+    <div id="discard-btn-area">
+      <button id="discard-btn">Discard &amp; End Turn</button>
+    </div>
+
+    <!-- Deck counter -->
+    <div id="deck-counter">
+      Deck: <span id="deck-count">0</span>
+    </div>
+  </div>
+
+  <!-- Game Over -->
+  <div id="game-over">
+    <h2 id="game-over-title">Run Complete</h2>
+    <div id="high-score-banner" class="hidden">New High Score!</div>
+    <div class="final-stats">
+      <div class="final-stat">Score: <span id="final-score">0</span></div>
+      <div class="final-stat high-score-row">High Score: <span id="final-highscore">0</span></div>
+      <div class="final-stat">Rotations: <span id="final-rotations">0</span></div>
+      <div class="final-stat">Best Combo: <span id="final-combo">0</span></div>
+      <div class="final-stat">NADH: <span id="final-nadh">0</span> | FADH₂: <span id="final-fadh2">0</span> | GTP: <span id="final-gtp">0</span></div>
+    </div>
+    <div class="game-over-buttons">
+      <button id="endless-btn">Continue (Endless)</button>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
